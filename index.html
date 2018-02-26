@@ -154,13 +154,11 @@
         var days = $('#day').text();
 
         // 设置标题
-        if (parseInt(days / 365) == 0) {
-            $(document).attr("title", "在一起" + parseInt(days / 365) + "年,感谢相伴。");
-        } else if (parseInt(days / 30) == 0) {
-            $(document).attr("title", "在一起" + parseInt(days / 30) + "个月,感谢相伴。");
-        } else {
-            $(document).attr("title", "在一起" + days + "天,感谢相伴。");
-        }
+
+        var myears = parseInt(days / 365)
+        var mdays = days % 365
+
+        $(document).attr("title", "在一起" + myears + "年" + mdays + "天,感谢相伴。");
 
         //设置每一张图片对应的文字
         var says = new Array(
